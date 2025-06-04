@@ -4,8 +4,14 @@ import React from 'react'
 export default function Login() {
     return (
         <div className="mx-auto max-w-sm lg:max-w-4xl">
-            
-            <img className="rounded-full w-40  " src="https://lh6.ggpht.com/aiY9J8YK8Lzr7hMC7nZWlZGiBn8TF_PY7NVNy5U1i5g4zG8yEPzEZTJK2WwbWJUogg"  />
+            <div className='flex items-center gap-5'>
+                <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                </div>
+                <img className="rounded-full w-20  " src="/logo.png" />
+            </div>
             <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
                 <div className="w-full p-8 lg:w-1/2">
                     <h2 className="text-4xl font-semibold text-black text-center">Sign up</h2>

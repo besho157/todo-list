@@ -1,22 +1,33 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from "next/navigation"
 import { MdErrorOutline } from "react-icons/md";
 
 
 export default function Login() {
+
     const users = [
-        { email: 'besho@gmail.com', password: '3516' },
-        { email: 'sayd@gmail.com', password: '5993' },
-        { email: 'torsha@gmail.com', password: '1485' }
+        { email: 'besho@gmail.com', password: '3516', auth: 'user' },
+        { email: 'sayd@gmail.com', password: '5993', auth: 'user' },
+        { email: 'torsha@gmail.com', password: '1485', auth: 'gest' }
 
     ]
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState();
+
     const Router = useRouter();
+
+    useEffect(() => {
+        const IsLogin = localStorage.getItem('isLogin');
+        if (IsLogin) {
+            Router.replace('/todo-list')
+        }
+    }, []);
+
+
 
 
     const handleLogin = (e: React.FormEvent) => {
@@ -24,16 +35,25 @@ export default function Login() {
         const foundUser = users.find((user) => user.email === email && user.password === password)
 
         if (foundUser) {
-            Router.push('/todo-list')
+            localStorage.setItem('isLogin', 'true');
+            Router.replace('/todo-list');
+
         }
         else {
             setError(" Incorrect username or password")
         }
 
     }
-    return (
+    return  (
         <form onSubmit={handleLogin} className="mx-auto max-w-sm lg:max-w-4xl">
-            <img className="rounded-full w-40 " src="https://lh6.ggpht.com/aiY9J8YK8Lzr7hMC7nZWlZGiBn8TF_PY7NVNy5U1i5g4zG8yEPzEZTJK2WwbWJUogg" />
+            <div className='flex items-center gap-5'>
+                <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                </div>
+                <img className="rounded-full w-20  " src="/logo.png" />
+            </div>
 
             <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
                 <div className="w-full p-8 lg:w-1/2">
@@ -92,7 +112,7 @@ export default function Login() {
                     </div>
                     <div className="mt-8">
                         <button className="bg-blue-600 text-white font-bold py-2 px-4 w-full rounded hover:bg-blue-800">Log in</button>
-                        {error &&   <p className='flex m-auto items-center  gap-4 bg-red-100 border border-red-400 text-red-700 px-4 py-2 mt-4 rounded relative'>{<MdErrorOutline  />}{error}</p>}
+                        {error && <p className='flex m-auto items-center  gap-4 bg-red-100 border border-red-400 text-red-700 px-4 py-2 mt-4 rounded relative'>{<MdErrorOutline />}{error}</p>}
                     </div>
 
                     <div className="mt-4 flex items-center justify-center">
