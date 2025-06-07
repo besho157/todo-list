@@ -7,7 +7,6 @@ const Header = () => {
         <header className="w-full bg-transparent   border-b border-gray-200 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
                             <div className="flex items-center space-x-2">
@@ -53,14 +52,12 @@ const Header = () => {
                         </div>
                     </nav>
 
-                    {/* CTA Button */}
                     <div className="flex items-center">
                         <Link href="/sign-up" className="isomorphic-link isomorphic-link--internal inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
                             Get Started
                         </Link>
                     </div>
 
-                    {/* Mobile menu button */}
                     <div className="md:hidden">
                         <button className="text-gray-700 hover:text-gray-900 p-2">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

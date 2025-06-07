@@ -1,6 +1,6 @@
 'use client';
 
-import Background from "@/components/back-ground/page";
+import Background from "@/components/background";
 import Header from "@/components/Header";
 import Link from "next/link";
 

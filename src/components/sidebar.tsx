@@ -1,5 +1,5 @@
 'use client';
-import { FaRegCheckCircle, FaCircleNotch } from 'react-icons/fa';
+import { FaRegCheckCircle, FaCircleNotch  } from 'react-icons/fa';
 import { GrAddCircle, GrInbox } from "react-icons/gr";
 import { useRef } from "react";
 import { FiLogOut } from 'react-icons/fi';
@@ -31,7 +31,7 @@ export default function Sidebar() {
 
                                 <img
                                     alt="tania andrew"
-                                   src="https://i.pravatar.cc/300"
+                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0xgCzY-QSnwbl4PK03rs3cdwlAnDA13ZIAQ&s"
                                     className=" inline-block h-10 w-10 cursor-pointer rounded-full object-cover object-center"
                                     onClick={handleProfileClick}
                                 />
@@ -50,7 +50,7 @@ export default function Sidebar() {
                         </li>
 
                         <li>
-                            <Link href="/all-todos"
+                            <Link href="/all-tasks"
                                 className="text-slate-800 text-[15px] gap-x-4 font-medium flex items-center text-blue-600   px-8 py-3.5 transition-all hover:bg-slate-100">
 
                                 <GrInbox className="w-[20px] h-[20px] mr-3" />
