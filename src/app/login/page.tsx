@@ -45,7 +45,7 @@ export default function Login() {
 
     }
     return (
-        
+
         <form onSubmit={handleLogin} className="mx-auto max-w-sm lg:max-w-4xl">
             <div className='flex items-center gap-5'>
                 <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
@@ -113,7 +113,13 @@ export default function Login() {
                     </div>
                     <div className="mt-8">
                         <button className="bg-blue-600 text-white font-bold py-2 px-4 w-full rounded hover:bg-blue-800">Log in</button>
-                        {error && <p className='flex m-auto items-center  gap-4 bg-red-100 border border-red-400 text-red-700 px-4 py-2 mt-4 rounded relative'>{<MdErrorOutline />}{error}</p>}
+                        {error ? (
+                            <p className='flex m-auto items-center gap-4 bg-red-100 border border-red-400 text-red-700 px-4 py-2 mt-4 rounded relative'>
+                                <MdErrorOutline /> {error}
+                            </p>
+                        ) : null}
+
+
                     </div>
                     <div className="mt-4 flex items-center justify-center">
                         <span>Don't have an account?
