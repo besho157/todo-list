@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preinstall": "yarn set version stable",
+    "install": "yarn install --immutable",
   },
   "dependencies": {
     "install": "^0.13.0",
