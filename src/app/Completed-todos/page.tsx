@@ -2,10 +2,14 @@
 import { useEffect, useState } from 'react';
 import { Todo } from '@/types/todo';
 import Sidebar from '@/components/sidebar';
-import {  FaRegCheckCircle  } from 'react-icons/fa';
+import { FaRegCheckCircle } from 'react-icons/fa';
 import { loadTodosFromLocalStorage } from '@/utils/loadTodos';
 
+
+
+
 export default function CompletedTodos() {
+
   const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
@@ -15,15 +19,14 @@ export default function CompletedTodos() {
 
   const filteredTodos = todos.filter(todo => todo.isCompleted);
 
+ 
   return (
     <div className="max-w-2xl mx-auto p-4">
       <Sidebar />
-
       <div className='flex items-center gap-4 '>
         <FaRegCheckCircle className=' text-3xl text-blue-600' />
         <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-4xl">Completed Tasks</h2>
       </div>
-
       <ul className=" space-y-3 mt-4">
         {filteredTodos.map(todo => (
           <li key={todo.id} className="flex justify-between p-3 bg-white rounded shadow">
@@ -34,6 +37,7 @@ export default function CompletedTodos() {
           </li>
         ))}
       </ul>
+     
     </div>
   );
 }
