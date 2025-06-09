@@ -6,9 +6,7 @@ import { useRouter } from "next/navigation";
 export default function UserProfile() {
     const router = useRouter();
 
-    const handleEditClick = () => {
-        router.push("/edit-profile");
-    };
+    
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-blue-50 via-transparent to-transparent py-20 px-4 flex items-center justify-center">
@@ -36,7 +34,7 @@ export default function UserProfile() {
 
                     <div className="mt-6">
                         <button
-                            onClick={handleEditClick}
+                           
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg border-2 border-blue-600 px-6 py-2 font-semibold  text-blue-600 transition-all duration-300 hover:bg-blue-600 hover:text-white"
                         >
                             <span className="absolute left-0 top-0 h-full w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>

@@ -40,12 +40,12 @@ export default function Login() {
 
         }
         else {
-            setError('Incorrect username or password')
+            setError(" Incorrect username or password")
         }
 
     }
     return (
-
+        
         <form onSubmit={handleLogin} className="mx-auto max-w-sm lg:max-w-4xl">
             <div className='flex items-center gap-5'>
                 <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">

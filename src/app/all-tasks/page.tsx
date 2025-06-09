@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { Todo } from '@/types/todo';
 import Sidebar from '@/components/sidebar';
 import { loadTodosFromLocalStorage } from '@/utils/loadTodos';
+import {  GrInbox } from "react-icons/gr";
+
 
 export default function AllTodos() {
     const [todos, setTodos] = useState<Todo[]>([]);
@@ -17,7 +19,10 @@ export default function AllTodos() {
     return (
         <div className='max-w-2xl mx-auto p-4'>
             <Sidebar />
-            <h1 className="text-2xl font-bold my-4 text-center">All Todos</h1>
+            <div className='flex justify-center gap-4 ' >
+            <GrInbox className=' text-3xl text-blue-600'/>
+                <h1 className="text-xl font-bold tracking-tight text-gray-900 sm:text-4xl">All Todos</h1>
+            </div>
             <ul className="space-y-3">
                 {todos.map(todo => (
                     <li
