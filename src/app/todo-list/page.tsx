@@ -29,7 +29,8 @@ export default function TodoList() {
     const savedTodos = localStorage.getItem('todos');
     if (savedTodos) {
       try {
-        const parsed = JSON.parse(savedTodos).map((todo: any) => ({
+        // هنا استبدلت any بنوع Todo
+        const parsed = JSON.parse(savedTodos).map((todo: Todo) => ({
           ...todo,
           createdAt: new Date(todo.createdAt),
           id: todo.id.toString(),
@@ -51,24 +52,23 @@ export default function TodoList() {
 
   const addTodo = () => {
     if (!inputText.trim()) return;
-    const newTodo = {
+    const newTodo: Todo = {
       id: Date.now().toString(),
       text: inputText.trim(),
       isCompleted: false,
       createdAt: new Date(),
     };
-    const updatedTodos = [...todos, newTodo];
-    setTodos(updatedTodos);
+    setTodos(prev => [...prev, newTodo]);
     setInputText('');
   };
 
   const deleteTodo = (id: string) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTodos(prev => prev.filter(todo => todo.id !== id));
   };
 
   const toggleComplete = (id: string) => {
-    setTodos(
-      todos.map(todo =>
+    setTodos(prev =>
+      prev.map(todo =>
         todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
       )
     );
@@ -82,8 +82,8 @@ export default function TodoList() {
 
   const updateTodo = () => {
     if (editingId && inputText.trim()) {
-      setTodos(
-        todos.map(todo =>
+      setTodos(prev =>
+        prev.map(todo =>
           todo.id === editingId ? { ...todo, text: inputText.trim() } : todo
         )
       );

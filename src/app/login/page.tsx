@@ -122,7 +122,7 @@ export default function Login() {
 
                     </div>
                     <div className="mt-4 flex items-center justify-center">
-                        <span>Don't have an account?
+                        <span>"Don't have an account?"
                             <Link href="/sign-up" className="text-xs text-blue-800 uppercase"> Sign up</Link>
                         </span>
                     </div>
