@@ -1,10 +1,8 @@
 "use client";
 
 import Sidebar from "@/components/sidebar";
-import { useRouter } from "next/navigation";
 
 export default function UserProfile() {
-    const router = useRouter();
 
     
 

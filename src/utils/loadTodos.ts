@@ -1,4 +1,4 @@
-import { Todo } from "@/types/todo";
+import { Todo } from "@/types/todo"; 
 
 export function loadTodosFromLocalStorage(): Todo[] {
   if (typeof window === 'undefined') return [];
@@ -8,7 +8,7 @@ export function loadTodosFromLocalStorage(): Todo[] {
 
   try {
     const todos = JSON.parse(saved);
-    return todos.map((todo: any) => ({
+    return todos.map((todo: Todo) => ({ 
       ...todo,
       createdAt: new Date(todo.createdAt),
     }));
