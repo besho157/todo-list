@@ -3,10 +3,10 @@ import { useEffect } from "react";
 export const useGoogleOneTap = () => {
   useEffect(() => {
     const loadGoogleOneTap = () => {
-      // @ts-ignore
+      // @ts-expect-error
       window.google.accounts.id.initialize({
         client_id: "YOUR_GOOGLE_CLIENT_ID", // حط Client ID بتاعك هنا
-        callback: (response: any) => {
+        callback: (response: { credential: string; select_by: string }) => {
           const token = response.credential;
 
           // ابعت التوكن للباك اند (توجيه أو API)
@@ -16,7 +16,7 @@ export const useGoogleOneTap = () => {
         cancel_on_tap_outside: false,
       });
 
-      // @ts-ignore
+      // @ts-expect-error
       window.google.accounts.id.prompt(); // بيظهر البوكس تلقائيًا
     };
 
