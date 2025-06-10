@@ -16,8 +16,7 @@ export default function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState();
-
+    const [error, setError] = useState<string | undefined>(undefined);
     const Router = useRouter();
 
     useEffect(() => {
