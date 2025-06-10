@@ -58,7 +58,7 @@ export default function Login() {
             <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
                 <div className="w-full p-8 lg:w-1/2">
                     <h2 className="text-4xl font-semibold text-black text-center">Log in</h2>
-                    <a href="#" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
+                    <a href="" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
                         <div>
                             <svg className="h-6 w-6" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l5.9-5.9C34.3 6.5 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.1-.4-3.5z" />
@@ -122,7 +122,7 @@ export default function Login() {
                     </div>
                     <div className="mt-4 flex items-center justify-center">
                         <span>
-                            <p>Don&apos;t have an account?</p>
+                            Don&apos;t have an account? 
                             <Link href="/sign-up" className="text-xs text-blue-800 uppercase"> Sign up</Link>
                         </span>
                     </div>

@@ -2,14 +2,17 @@
 
 import Background from "@/components/background";
 import Header from "@/components/Header";
+import { useGoogleOneTap } from "@/useGoogleOneTap";
 import Link from "next/link";
 
 export default function Home() {
+  useGoogleOneTap();
   return (
-    <div>
+    < div >
       <Header />
       <Background />
-     
+
+
 
       <div className="mx-auto grid grid-rows-3  p-8 max-w-4xl text-center">
         <div className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -43,7 +46,7 @@ export default function Home() {
 
         </div>
       </div>
-    </div>
+    </div >
 
   );
 }
