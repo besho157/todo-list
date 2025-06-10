@@ -1,13 +1,14 @@
+// next.config.ts
+import type { NextConfig } from 'next';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   experimental: {
-    outputFileTracingExcludes: {
-      '*': ['node_modules/@swc/core-win32-x64-msvc', 'node_modules/webpack'],
-    },
     esmExternals: 'loose', 
-    serverComponentsExternalPackages: ['sharp', 'unrs-resolver'],
   },
+  outputFileTracingExcludes: {
+    '*': ['node_modules/@swc/core-win32-x64-msvc', 'node_modules/webpack'],
+  },
+  serverExternalPackages: ['sharp', 'unrs-resolver'], 
 };
 
-module.exports = nextConfig;
+export default nextConfig; 
