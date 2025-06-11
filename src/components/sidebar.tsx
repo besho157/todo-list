@@ -15,7 +15,6 @@ export default function Sidebar() {
     const Router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
 
-    // فتح تلقائي في الشاشات الكبيرة
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 1024) {
@@ -38,18 +37,27 @@ export default function Sidebar() {
 
     return (
         <div className="relative">
-            <button
-                className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-white border rounded-md shadow"
-                onClick={() => setIsOpen(!isOpen)}
-            >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {!isOpen && (
+                <button
+                    className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-white border rounded-md shadow"
+                    onClick={() => setIsOpen(true)}
+                >
+                    <Menu size={24} />
+                </button>
+            )}
+
 
             <nav
                 className={`fixed top-0 left-0 h-full w-64 bg-white shadow-md border-r border-gray-200 z-40 transform transition-transform duration-300 
                 ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
                 lg:translate-x-0`}
             >
+                <div className="lg:hidden flex justify-end p-4">
+                    <button onClick={() => setIsOpen(false)}>
+                        <X size={24} />
+                    </button>
+                </div>
+
                 <div className="flex flex-col h-full">
                     <div ref={menuRef} className="grid flex-wrap items-center cursor-pointer border-b border-gray-300 px-8 py-3.5">
                         <div className='flex gap-6 items-center'>
