@@ -5,7 +5,6 @@ import EmojiPicker, { EmojiClickData } from 'emoji-picker-react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Sidebar from '@/components/sidebar';
-import Background from '@/components/background';
 
 const PageMainContent: React.FC = () => {
     const [currentEmoji, setCurrentEmoji] = useState('😍');
