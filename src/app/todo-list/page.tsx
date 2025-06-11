@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import { Todo } from '../../types/todo';
 import Sidebar from '@/components/sidebar';
+import { FaRegEdit } from "react-icons/fa";
+import { FaRegTrashCan } from "react-icons/fa6";
 import { useRouter } from 'next/navigation';
 
 type FilterType = 'all' | 'completed' | 'uncompleted';
@@ -107,6 +109,8 @@ export default function TodoList() {
   }
 
   return (
+    <div className='min-h-screen bg-gradient-to-b from-blue-50 via-transparent to-transparent py-20 px-4  items-center justify-center'>
+
     <div className="max-w-2xl mx-auto p-4">
       <Sidebar />
 
@@ -200,21 +204,22 @@ export default function TodoList() {
               <div className="flex gap-2">
                 <button
                   onClick={() => startEditing(todo.id)}
-                  className="px-3 py-1 text-sm bg-yellow-500 text-white rounded hover:bg-yellow-600 transition-colors"
+                  className="bg-blue-500 text-white px-3 py-1 rounded-md text-xs md:text-sm duration-300 hover:scale-125"
                 >
-                  Edit
+                  <FaRegEdit /> 
                 </button>
                 <button
                   onClick={() => deleteTodo(todo.id)}
-                  className="px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+                  className="bg-red-500 text-white px-3 py-1 rounded-md text-xs md:text-sm duration-300 hover:scale-125"
                 >
-                  Delete
+                  <FaRegTrashCan/>
                 </button>
               </div>
             </li>
           ))
         )}
       </ul>
+    </div>
     </div>
   );
 }

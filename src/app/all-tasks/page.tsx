@@ -17,6 +17,8 @@ export default function AllTodos() {
     }, []);
 
     return (
+        <div className='min-h-screen bg-gradient-to-b from-blue-50 via-transparent to-transparent py-20 px-4  items-center justify-center'>
+
         <div className='max-w-2xl mx-auto p-4'>
             <Sidebar />
             <div className='flex justify-center gap-4 ' >
@@ -44,6 +46,7 @@ export default function AllTodos() {
                     </li>
                 ))}
             </ul>
+        </div>
         </div>
     );
 }

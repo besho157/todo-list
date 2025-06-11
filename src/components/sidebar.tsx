@@ -1,5 +1,6 @@
 'use client';
 import { FaRegCheckCircle, FaCircleNotch  } from 'react-icons/fa';
+import { TfiThought } from "react-icons/tfi";
 import { GrAddCircle, GrInbox } from "react-icons/gr";
 import { useRef } from "react";
 import { FiLogOut } from 'react-icons/fi';
@@ -71,6 +72,14 @@ export default function Sidebar() {
 
                                 < FaCircleNotch className="w-[20px] h-[20px] mr-3" />
                                 <span>Uncompleted</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/thoughts"
+                                className="text-slate-800 text-[15px] gap-x-4 font-medium flex items-center text-blue-600   px-8 py-3.5 transition-all hover:bg-slate-100">
+
+                                < TfiThought className="w-[20px] h-[20px] mr-3" />
+                                <span>thoughts</span>
                             </Link>
                         </li>
                     </ul>
