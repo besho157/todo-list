@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react'
 export default function Login() {
     return (
-        <div className="mx-auto max-w-sm lg:max-w-4xl">
+        <form className="mx-auto mt-20 max-w-sm lg:max-w-4xl">
             <div className='flex items-center gap-5'>
                 <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                     <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -72,6 +72,6 @@ export default function Login() {
                     style={{ backgroundImage: "url('https://img.freepik.com/free-vector/completed-concept-illustration_114360-2945.jpg?semt=ais_hybrid&w=740')" }}>
                 </div>
             </div>
-        </div>
+        </form>
     )
 }

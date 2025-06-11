@@ -45,7 +45,7 @@ export default function Login() {
     }
     return (
 
-        <form onSubmit={handleLogin} className="mx-auto max-w-sm lg:max-w-4xl">
+        <form onSubmit={handleLogin} className="mx-auto mt-20 max-w-sm lg:max-w-4xl">
             <div className='flex items-center gap-5'>
                 <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                     <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
