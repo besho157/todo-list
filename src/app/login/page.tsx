@@ -14,8 +14,8 @@ export default function Login() {
 
     ]
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("torsha@gmail.com");
+    const [password, setPassword] = useState("1485");
     const [error, setError] = useState<string | undefined>(undefined);
     const Router = useRouter();
 
